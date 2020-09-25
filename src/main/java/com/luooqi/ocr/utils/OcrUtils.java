@@ -28,16 +28,17 @@ public class OcrUtils {
     public static String ocrImg(byte[] imgData) {
         int i = Math.abs(UUID.randomUUID().hashCode()) % 4;
         StaticLog.info("OCR Engine: " + i);
-        switch (i){
-            case 0:
-                return bdGeneralOcr(imgData);
-            case 1:
-                return bdAccurateOcr(imgData);
-            case 2:
-                return sogouMobileOcr(imgData);
-            default:
-                return sogouWebOcr(imgData);
-        }
+        return bdAccurateOcr(imgData);
+//        switch (i){
+//            case 0:
+//                return bdGeneralOcr(imgData);
+//            case 1:
+//                return bdAccurateOcr(imgData);
+//            case 2:
+//                return sogouMobileOcr(imgData);
+//            default:
+//                return sogouWebOcr(imgData);
+//        }
     }
 
     private static String bdGeneralOcr(byte[] imgData){
